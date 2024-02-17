@@ -19,27 +19,29 @@ public class Game {
 	@Column(name = "game_year")// alterar(customizar o nome da coluna no banco) o neme da varial pois year uma palavra reservada do sql
 	private Integer year;
 	private String genre;
-	private String plataforms;
+	private String platforms;
 	private Double score;
 	private String imgUrl;
-	private String shortDescrition;
+	@Column(columnDefinition = "TEXT")
+	private String shortDescription;
+	@Column(columnDefinition = "TEXT")// para jpa aceitar textos mais longos
 	private String longDescription;
 	
 	public Game() {
 		
 	}
 
-	public Game(Long id, String title, Integer year, String genre, String plataforms, Double score, String imgUrl,
-			String shortDescrition, String longDescription) {
+	public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
+			String shortDescription, String longDescription) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.year = year;
 		this.genre = genre;
-		this.plataforms = plataforms;
+		this.platforms = platforms;
 		this.score = score;
 		this.imgUrl = imgUrl;
-		this.shortDescrition = shortDescrition;
+		this.shortDescription = shortDescription;
 		this.longDescription = longDescription;
 	}
 
@@ -75,12 +77,12 @@ public class Game {
 		this.genre = genre;
 	}
 
-	public String getPlataforms() {
-		return plataforms;
+	public String getPlatforms() {
+		return platforms;
 	}
 
-	public void setPlataforms(String plataforms) {
-		this.plataforms = plataforms;
+	public void setPlatforms(String platforms) {
+		this.platforms = platforms;
 	}
 
 	public Double getScore() {
@@ -99,12 +101,12 @@ public class Game {
 		this.imgUrl = imgUrl;
 	}
 
-	public String getShortDescrition() {
-		return shortDescrition;
+	public String getshortDescription() {
+		return shortDescription;
 	}
 
-	public void setShortDescrition(String shortDescrition) {
-		this.shortDescrition = shortDescrition;
+	public void setshortDescription(String shortDescription) {
+		this.shortDescription = shortDescription;
 	}
 
 	public String getLongDescription() {
